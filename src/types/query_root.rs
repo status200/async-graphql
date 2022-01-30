@@ -17,8 +17,8 @@ struct Service {
     sdl: Option<String>,
 }
 
-pub(crate) struct QueryRoot<T> {
-    pub(crate) inner: T,
+pub struct QueryRoot<T> {
+    pub inner: T,
 }
 
 #[async_trait::async_trait]

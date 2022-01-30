@@ -24,16 +24,16 @@ use crate::{
 
 /// Schema builder
 pub struct SchemaBuilder<Query, Mutation, Subscription> {
-    validation_mode: ValidationMode,
-    query: QueryRoot<Query>,
-    mutation: Mutation,
-    subscription: Subscription,
-    registry: Registry,
-    data: Data,
-    complexity: Option<usize>,
-    depth: Option<usize>,
-    extensions: Vec<Box<dyn ExtensionFactory>>,
-    custom_directives: HashMap<&'static str, Box<dyn CustomDirectiveFactory>>,
+    pub validation_mode: ValidationMode,
+    pub query: QueryRoot<Query>,
+    pub mutation: Mutation,
+    pub subscription: Subscription,
+    pub registry: Registry,
+    pub data: Data,
+    pub complexity: Option<usize>,
+    pub depth: Option<usize>,
+    pub extensions: Vec<Box<dyn ExtensionFactory>>,
+    pub custom_directives: HashMap<&'static str, Box<dyn CustomDirectiveFactory>>,
 }
 
 impl<Query, Mutation, Subscription> SchemaBuilder<Query, Mutation, Subscription> {
@@ -396,7 +396,7 @@ where
         self.0.env.registry.names()
     }
 
-    fn create_extensions(&self, session_data: Arc<Data>) -> Extensions {
+    pub fn create_extensions(&self, session_data: Arc<Data>) -> Extensions {
         Extensions::new(
             self.extensions.iter().map(|f| f.create()),
             self.env.clone(),
@@ -404,7 +404,7 @@ where
         )
     }
 
-    async fn prepare_request(
+    pub async fn prepare_request(
         &self,
         mut extensions: Extensions,
         request: Request,

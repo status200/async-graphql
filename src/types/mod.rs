@@ -27,4 +27,4 @@ pub use merged_object::{MergedObject, MergedObjectTail};
 pub use string_number::StringNumber;
 pub use upload::{Upload, UploadValue};
 
-pub(crate) use query_root::QueryRoot;
+pub use query_root::QueryRoot;
