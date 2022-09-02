@@ -169,7 +169,7 @@ mod custom_directive;
 mod error;
 mod guard;
 mod look_ahead;
-mod model;
+pub mod model;
 mod request;
 mod response;
 mod schema;

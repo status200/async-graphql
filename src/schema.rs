@@ -207,7 +207,7 @@ pub struct SchemaInner<Query, Mutation, Subscription> {
     pub(crate) complexity: Option<usize>,
     pub(crate) depth: Option<usize>,
     pub(crate) extensions: Vec<Box<dyn ExtensionFactory>>,
-    pub(crate) env: SchemaEnv,
+    pub env: SchemaEnv,
 }
 
 /// GraphQL schema.
